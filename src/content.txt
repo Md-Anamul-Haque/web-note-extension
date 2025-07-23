@@ -1,0 +1,46 @@
+// import browser from "webextension-polyfill";
+
+// let button: HTMLButtonElement | null = null;
+
+// function showButton(text: string, x: number, y: number) {
+//     if (button) button.remove();
+
+//     button = document.createElement("button");
+//     button.innerText = "Add Note";
+//     Object.assign(button.style, {
+//         position: "absolute",
+//         top: `${y + 10}px`,
+//         left: `${x + 10}px`,
+//         zIndex: 10000,
+//         background: "#333",
+//         color: "#fff",
+//         padding: "6px 10px",
+//         borderRadius: "4px",
+//         border: "none",
+//         cursor: "pointer"
+//     });
+
+//     button.onclick = async () => {
+//         const note = prompt("Add a note for:\n" + text);
+//         if (note) {
+//             const { notes = [] } = await browser.storage.local.get("notes");
+//             notes.push({ text, note, date: new Date().toISOString() });
+//             await browser.storage.local.set({ notes });
+//             alert("Note saved!");
+//         }
+//         button?.remove();
+//         button = null;
+//     };
+
+//     document.body.appendChild(button);
+// }
+
+// document.addEventListener("mouseup", (e) => {
+//     const text = window.getSelection()?.toString().trim();
+//     if (text) {
+//         showButton(text, e.clientX, e.clientY);
+//     } else if (button) {
+//         button.remove();
+//         button = null;
+//     }
+// });
