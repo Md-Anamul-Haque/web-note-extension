@@ -2,6 +2,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import { defineConfig } from "vite";
 import webExtension, { readJsonFile } from "vite-plugin-web-extension";
+import { zip } from 'zip-a-folder';
 
 function generateManifest() {
   const manifest = readJsonFile("src/manifest.json");
@@ -21,10 +22,25 @@ export default defineConfig({
     webExtension({
       manifest: generateManifest,
     }),
+    {
+      name: 'zip-dist',
+      closeBundle: async () => {
+        const distPath = 'dist';
+        const outputZip = 'extension.zip';
+
+        try {
+          await zip(distPath, outputZip);
+          console.log(`✅ Zipped ${distPath} to ${outputZip}`);
+        } catch (err) {
+          console.error('❌ Failed to zip:', err);
+        }
+      }
+    }
   ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
 });
