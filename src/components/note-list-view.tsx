@@ -16,7 +16,7 @@ export function NoteListView({
   return (
     <div className="note-list-container">
       <header className="view-header">
-        <h1 className="view-header-title">QuickNotes</h1>
+        <h1 className="view-header-title ">WEB-NOTE</h1>
       </header>
       <div className="note-list-scroll-area">
         {notes.length > 0 ? (

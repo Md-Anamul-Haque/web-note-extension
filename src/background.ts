@@ -19,11 +19,5 @@ browser.contextMenus.onClicked.addListener(async (info) => {
       updatedAt: new Date(),
     });
 
-    await browser.notifications.create({
-      type: "basic",
-      iconUrl: "icon.png", // ✅ must exist in public/assets and declared in manifest
-      title: "Note Saved",
-      message: "Your selected text was saved as a note.",
-    });
   }
 });

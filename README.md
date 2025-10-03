@@ -8,7 +8,6 @@
 
 - 🧠 **Quick Note-Taking**: Instantly create, edit, or delete notes from your browser's toolbar.
 - 💾 **Local Storage**: All notes are stored securely on your local device—no internet connection or account required.
-- ⏰ **Optional Notifications**: Set reminders on your notes and get notified right on your desktop (if enabled).
 - 📋 **Context Menu Integration**: Highlight text on any webpage and right-click to save it as a note.
 - 🎯 **Lightweight and Blazing Fast**: Optimized for performance and ease of use.
 
